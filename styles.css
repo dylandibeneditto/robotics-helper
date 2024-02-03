@@ -1,0 +1,100 @@
+:root {
+    color-scheme: dark;
+}
+
+#grid {
+    width: 60vmin;
+    height: 60vmin;
+    border: gray 1px solid;
+}
+
+* {
+    font-family: Helvetica;
+}
+
+body {
+    background: rgb(42, 42, 42);
+    margin: 0;
+}
+
+.point {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    border: 1px solid white;
+    border-radius: .5rem;
+    font-size: .8rem;
+    width: fit-content;
+    height: 1rem;
+    padding: .2rem;
+    color: white;
+    background: gray;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 10;
+}
+
+#layout {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 2rem;
+    padding: 0rem 2rem;
+    grid-template-columns: auto 1fr;
+}
+
+#output {
+    height: max-content;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-rows: 1fr 1fr;
+    height: 90vh;
+    gap: 2rem;
+}
+
+.output {
+    overflow-y: scroll;
+    border: 1px solid gray;
+    border-radius: .4rem;
+    overflow-x: hidden;
+}
+
+#mOut {
+    padding: .5rem;
+}
+
+.title {
+    width: 100%;
+    height: fit-content;
+    border-bottom: 1px solid gray;
+    padding: .5rem;
+}
+
+#mOut > * {
+    font-family: monospace;
+}
+
+.pointItem {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: auto auto 1fr auto;
+    padding: .5rem;
+    border-bottom: 1px solid gray;
+    gap: 1rem;
+    align-items: center;
+}
+
+.pointItem > * {
+    font-family: monospace;
+}
+
+.remove {
+    padding: .2rem;
+    border-radius: .2rem;
+    background: rgb(182, 14, 14);
+    cursor: pointer;
+}
