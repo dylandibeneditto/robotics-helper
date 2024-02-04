@@ -29,12 +29,6 @@ export default class Experience {
     }
 
     updateOut() {
-        const m = document.getElementById("mOut")
-        m.innerHTML = ""
-        const newEl = document.createElement("div")
-        newEl.innerHTML = this.solver.navigate().join("<br>")
-        m.appendChild(newEl);
-
         const p = document.getElementById("pOut")
         p.innerHTML = ""
         this.board.points.forEach((item, index)=> {
@@ -43,9 +37,16 @@ export default class Experience {
 
         Array.from(document.getElementsByClassName("remove")).forEach((item)=> {
             item.addEventListener("mousedown", (e)=> {
-                this.board.remove(parseInt(e.target.parentElement.id))
+                this.board.remove(e.target.parentElement.id.slice(1,e.target.parentElement.id.length))
                 this.updateOut()
             })
         })
+
+        const m = document.getElementById("mOut")
+        m.innerHTML = ""
+        const newEl = document.createElement("div")
+        newEl.innerHTML = this.solver.navigate().join("<br>")
+        m.appendChild(newEl);
+
     }
 }
