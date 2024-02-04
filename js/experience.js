@@ -15,7 +15,7 @@ export default class Experience {
         Experience.instance = this;
 
         this.canvas = canvas
-        this.gridSnap = 2;
+        this.gridSnap = 4;
 
         this.sizes = new Size()
         this.sizes.resize();
@@ -33,7 +33,7 @@ export default class Experience {
         const p = document.getElementById("pOut")
         p.innerHTML = ""
         this.board.points.forEach((item, index)=> {
-            p.innerHTML += `<div class='pointItem' id="p${index}"><div>x: ${Math.round(item.x*10)/10}</div> <div>y: ${Math.round(item.y*10)/10}</div> <div></div> <div class='remove'>-</div> </div>`
+            p.innerHTML += `<div class='pointItem' id="p${index}"><div>#${index+1}</div> <div>x: ${Math.round(item.x*10)/10}</div> <div>y: ${Math.round(item.y*10)/10}</div> <div class='remove'>-</div> </div>`
         })
 
         Array.from(document.getElementsByClassName("remove")).forEach((item)=> {
