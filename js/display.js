@@ -5,9 +5,6 @@ export default class Display {
         this.experience = new Experience();
         this.board = this.experience.board;
 
-        this.width = this.experience.sizes.width;
-        this.height = this.experience.sizes.height;
-
         this.ctx = this.experience.canvas.getContext("2d");
 
         this.animate()
@@ -17,6 +14,8 @@ export default class Display {
         requestAnimationFrame(this.animate.bind(this));
 
         const points = this.board.points
+
+        this.ctx.clearRect(0,0, this.experience.sizes.width, this.experience.sizes.height)
 
         for (let i = 0; i < points.length; i++) {
             const x = (points[i].x/this.board.width)*this.experience.sizes.width;
