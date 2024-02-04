@@ -12,5 +12,7 @@ export default class Mouse {
             this.board.add(new Point((e.offsetX/this.experience.sizes.width)*this.board.width,(e.offsetY/this.experience.sizes.height)*this.board.height))
             this.experience.updateOut();
         })
+
+
     }
 }

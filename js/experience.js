@@ -40,5 +40,12 @@ export default class Experience {
         this.board.points.forEach((item, index)=> {
             p.innerHTML += `<div class='pointItem' id="p${index}"><div>x: ${Math.round(item.x*10)/10}</div> <div>y: ${Math.round(item.y*10)/10}</div> <div></div> <div class='remove'>-</div> </div>`
         })
+
+        Array.from(document.getElementsByClassName("remove")).forEach((item)=> {
+            item.addEventListener("mousedown", (e)=> {
+                this.board.remove(parseInt(e.target.parentElement.id))
+                this.updateOut()
+            })
+        })
     }
 }
