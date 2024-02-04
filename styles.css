@@ -98,3 +98,15 @@ body {
     background: rgb(182, 14, 14);
     cursor: pointer;
 }
+
+#gridWrap {
+    width: fit-content;
+    height: fit-content;
+}
+
+#pvOut {
+    position: absolute;
+    width: 60vmin;
+    height: 60vmin;
+    pointer-events: none;
+}
