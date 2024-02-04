@@ -7,7 +7,6 @@ export default class Solver {
     }
 
     navigate() {
-        console.log(this.board.points)
         if(this.board.points.length>1) {
             this.x = this.board.points[0].x;
             this.y = this.board.points[0].y;
