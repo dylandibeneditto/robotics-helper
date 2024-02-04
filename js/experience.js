@@ -15,7 +15,7 @@ export default class Experience {
         Experience.instance = this;
 
         this.canvas = canvas
-        this.gridSnap = 1;
+        this.gridSnap = 2;
 
         this.sizes = new Size()
         this.sizes.resize();

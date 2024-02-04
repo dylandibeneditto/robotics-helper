@@ -18,7 +18,7 @@ export default class Display {
         this.ctx.strokeStyle = "gray"
         this.ctx.lineWidth = 1;
 
-        for(let x = 0; x < this.board.width * g; x++) {
+        for(let x = 0; x < this.board.width * g; x+=1/g) {
             this.ctx.beginPath()
             this.ctx.moveTo((x/this.board.width)*this.experience.sizes.width,0)
             this.ctx.lineTo((x/this.board.width)*this.experience.sizes.width,h)
@@ -26,7 +26,7 @@ export default class Display {
             this.ctx.stroke()
         }
 
-        for(let y = 0; y < this.board.height * g; y++) {
+        for(let y = 0; y < this.board.height * g; y+=1/g) {
             this.ctx.beginPath()
             this.ctx.moveTo(0,(y/this.board.height)*this.experience.sizes.height)
             this.ctx.lineTo(w,(y/this.board.height)*this.experience.sizes.height)
